@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Circuit Terms of Use</title>
+<style>
+  :root{
+    --bg:#F6F0E6;
+    --bg-card:#FFFCF5;
+    --bg-soft:#F1E8D8;
+    --bg-teal:#247A6E;
+    --bg-teal-dark:#1E655B;
+    --text:#2B2118;
+    --muted:#6B5D4F;
+    --line:#DCCBB2;
+    --line-soft:#E9DDC9;
+    --gold:#B9975B;
+    --gold-soft:#F3EAD3;
+    --radius:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#171412;
+      --bg-card:#221E1A;
+      --bg-soft:#2A2520;
+      --text:#F0E8DC;
+      --muted:#B8A99A;
+      --line:#3D352D;
+      --line-soft:#332C26;
+      --gold-soft:#2E2A22;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--bg-teal)}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2rem}
+  .wrap{max-width:780px;margin:0 auto;padding:24px 18px 56px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bg-teal);
+    display:flex;align-items:center;gap:10px;margin:8px 0 14px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block}
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;font-weight:700;
+  }
+  h1 span{color:var(--bg-teal)}
+  .lede{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:640px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+  .pill{
+    font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--bg-card);
+    padding:7px 11px;border-radius:999px;
+  }
+  .pill strong{color:var(--text)}
+  .pill span{color:var(--muted);font-weight:500}
+  .answer{
+    background:var(--bg-teal);color:#fff;border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;
+  }
+  .answer h2{font-family:Georgia,serif;font-size:22px;margin:0 0 8px;line-height:1.25;color:#fff}
+  .answer p{margin:0 0 10px;color:#DFF2EE;font-size:15.5px;line-height:1.6}
+  .answer p:last-child{margin-bottom:0}
+  .answer strong{color:#fff}
+  .answer ul{margin:6px 0 4px;padding-left:20px;color:#DFF2EE;font-size:15.5px;line-height:1.6}
+  .answer li{margin:5px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 8px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr} h1{font-size:36px}}
+  .mini{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;
+  }
+  .mini b{display:block;font-size:15px;margin-bottom:4px}
+  .mini p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+  .mini .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:8px}
+  .toc{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:20px 0 8px;
+  }
+  .toc h3{margin:0 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+  @media(max-width:560px){.toc ol{columns:1}}
+  .toc li{margin:6px 0;break-inside:avoid}
+  .toc a{color:var(--text);text-decoration:none;font-size:15px;font-weight:500;display:inline-block;padding:4px 0;min-height:32px}
+  .toc a:hover{text-decoration:underline}
+  .policy{margin-top:10px}
+  section{padding:26px 0 6px;border-bottom:1px solid var(--line-soft)}
+  section:last-of-type{border-bottom:none}
+  .num{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:6px}
+  h2.sec{font-family:Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+  section p{margin:0 0 12px;font-size:16px;color:#3A2E22}
+  @media(prefers-color-scheme:dark){section p{color:#E6DDD0}}
+  section ul{margin:8px 0 14px;padding-left:20px}
+  section li{margin:6px 0;font-size:15.5px;line-height:1.6}
+  .callout{
+    background:var(--gold-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0;
+    font-size:15px;line-height:1.6;
+  }
+  .callout strong{display:block;margin-bottom:4px}
+  footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.6}
+  footer strong{color:var(--text)}
+  .small{font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Circuit &bull; Terms of Use</div>
+  <h1>Terms for using<br><span>Circuit.</span></h1>
+  <p class="lede">By downloading, opening, or using Circuit, you agree to these Terms of Use. Circuit is a local-only app for tracking streaks, urges, and progress. It is a self-tracking tool — not medical treatment, not therapy, and not financial advice. If you do not agree to these terms, do not use the app.</p>
+
+  <div class="meta">
+    <div class="pill"><strong>Effective</strong> <span>November 19, 2026</span></div>
+    <div class="pill"><strong>App</strong> <span>Circuit for iOS &amp; Android</span></div>
+    <div class="pill"><strong>Publisher</strong> <span>Daniel Caruso</span></div>
+    <div class="pill"><strong>Version</strong> <span>Applies to v1.1 and later</span></div>
+  </div>
+
+  <div class="answer">
+    <h2>In plain English</h2>
+    <ul>
+      <li><strong>You track, Circuit counts.</strong> You enter streaks, check-ins, lapses, and triggers. Circuit counts clean days, awards XP and trophies, and shows your patterns back to you.</li>
+      <li><strong>Your data stays on your device</strong> and belongs to you, as described in the <a href="https://dcaruso19.github.io/circuit-privacy/" style="color:#fff;text-decoration:underline">Privacy Policy</a>. There is no account and no Circuit server receiving your logs.</li>
+      <li><strong>Numbers in the app are estimates</strong> built from numbers you type in. They are motivation, not a promise, a bank balance, or a treatment outcome.</li>
+      <li><strong>If you are in crisis, Circuit is not the help you need.</strong> Call or text 988 in the United States or contact local emergency services.</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+    <div class="mini"><div class="k">The app</div><b>A tracker, not treatment</b><p>Circuit offers tracking, reminders, breathing and grounding tools, and information. It does not diagnose, treat, or guarantee any result.</p></div>
+    <div class="mini"><div class="k">Your data</div><b>Yours, on your phone</b><p>What you log is stored locally. You can edit it or delete it by deleting the app. We cannot recover it for you.</p></div>
+    <div class="mini"><div class="k">Projections</div><b>Estimates you control</b><p>Money and time saved, including the Lifetime figure to age 80, assume the daily cost and minutes you set never change.</p></div>
+    <div class="mini"><div class="k">Purchases</div><b>Handled by Apple / Google</b><p>If paid features are offered, the store processes payment, renewals, and refunds under its own terms. Circuit never sees your full card number.</p></div>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <h3>On this page</h3>
+    <ol>
+      <li><a href="#agreement">Agreement to these terms</a></li>
+      <li><a href="#what">What Circuit is — and is not</a></li>
+      <li><a href="#eligibility">Who can use Circuit</a></li>
+      <li><a href="#license">License &amp; ownership</a></li>
+      <li><a href="#your-data">Your data &amp; your responsibility</a></li>
+      <li><a href="#acceptable-use">Acceptable use</a></li>
+      <li><a href="#projections">Projections — not financial advice</a></li>
+      <li><a href="#purchases">Purchases &amp; subscriptions</a></li>
+      <li><a href="#third-parties">Third-party resources &amp; links</a></li>
+      <li><a href="#disclaimers">Disclaimers &amp; liability</a></li>
+      <li><a href="#termination">Termination &amp; changes</a></li>
+      <li><a href="#law">Governing law &amp; contact</a></li>
+    </ol>
+  </nav>
+
+  <div class="policy">
+
+    <section id="agreement">
+      <div class="num">01 — Agreement</div>
+      <h2 class="sec">These terms are the agreement</h2>
+      <p>These Terms of Use, together with Circuit’s <a href="https://dcaruso19.github.io/circuit-privacy/">Privacy Policy</a>, form the agreement between you and the publisher of Circuit (“Circuit,” “we,” “us”) for your use of the Circuit mobile app and this page. By installing or using Circuit, you accept them. If you obtained Circuit through the Apple App Store or Google Play, that store’s terms also apply to that download and to any purchase; if a store term conflicts with these terms about a purchase, the store’s term controls for that purchase.</p>
+      <p>If you do not agree, uninstall Circuit and stop using it. Continued use after an updated version of these terms takes effect means you accept the update, as described in Section 11.</p>
+    </section>
+
+    <section id="what">
+      <div class="num">02 — What Circuit is — and is not</div>
+      <h2 class="sec">Self-tracking and encouragement</h2>
+      <p>Circuit helps you:</p>
+      <ul>
+        <li>Create streaks for habits you want to stop or change, and record daily check-ins</li>
+        <li>Log urges (“waves”), lapses and lapse debriefs, and the triggers connected to them</li>
+        <li>Rate life areas, earn XP, and unlock trophies for milestones</li>
+        <li>See money and time saved so far, with projections for the week, month, year, and lifetime</li>
+        <li>Use in-app tools such as a timed breathing / vagus reset, and view resources and reminders you choose</li>
+      </ul>
+      <p><strong>Circuit is not:</strong></p>
+      <ul>
+        <li><strong>Not medical advice, diagnosis, or treatment.</strong> Circuit is not a healthcare provider, therapist, or crisis service, and it is not a substitute for professional care. It does not provide medication doses and does not claim that any technique, tool, or playbook works or will work for you.</li>
+        <li><strong>Not therapy or counseling,</strong> even where the app lists therapy, psychiatry, or clinic resources. Those listings are information only — see Section 9.</li>
+        <li><strong>Not a gambling, betting, brokerage, or trading service.</strong> Circuit does not place bets or trades, hold money, connect to a bank, brokerage, casino, or sportsbook account, or tell you what to bet on, buy, or sell.</li>
+        <li><strong>Not an emergency service.</strong> If you are in crisis or may harm yourself or someone else, call or text <strong>988</strong> in the United States (Suicide and Crisis Lifeline), call your local emergency number, or go to your nearest emergency department.</li>
+      </ul>
+      <div class="callout"><strong>Talk to your own clinician about treatment decisions</strong> Decisions about medication, dosing, treatment, and whether a technique is right for you belong with a qualified professional who knows you. Do not delay or stop care because of anything in Circuit.</div>
+    </section>
+
+    <section id="eligibility">
+      <div class="num">03 — Eligibility</div>
+      <h2 class="sec">Intended for adults</h2>
+      <p>Circuit is intended for adults managing their own habits. You may use Circuit only if you are at least 13 years old (or the minimum age in your country, if higher) and, if you are under 18, only with the permission of a parent or legal guardian who agrees to these terms for you. Circuit is not directed to children under 13.</p>
+      <p>By using Circuit, you confirm that the information you enter is yours to enter and that your use does not violate any law or any agreement you have with someone else.</p>
+    </section>
+
+    <section id="license">
+      <div class="num">04 — License &amp; ownership</div>
+      <h2 class="sec">You may use the app; you do not own it</h2>
+      <p>We grant you a personal, limited, non-exclusive, non-transferable, revocable license to install and use Circuit on devices you own or control, for your own personal, non-commercial use, under these terms and the applicable store terms.</p>
+      <p>Circuit itself — including its name, hexagon mark, design, text, graphics, and code — is owned by the publisher or its licensors and is protected by intellectual-property law. These terms do not transfer any ownership to you. Except where the law expressly permits it, you may not copy, modify, distribute, sell, lease, or create derivative works from the app, or reverse engineer or attempt to extract its source code.</p>
+      <p>If you send us feedback or suggestions, you give us permission to use them without payment or obligation, without giving up any rights you hold in them. Feedback you send through a store review or support message is yours to send — do not send passwords, medical records, or someone else’s private information.</p>
+    </section>
+
+    <section id="your-data">
+      <div class="num">05 — Your data &amp; your responsibility</div>
+      <h2 class="sec">What you log belongs to you</h2>
+      <p>Streak names, check-ins, lapse notes, triggers, life-area ratings, your date of birth, and every other entry you make in Circuit belong to you. Because Circuit stores that data locally on your device and does not send it to a Circuit server, we do not need — and these terms do not grant us — a license to host, copy, or publish your logs. How that data is stored, backed up, and deleted is described in the <a href="https://dcaruso19.github.io/circuit-privacy/">Privacy Policy</a>, which is part of this agreement.</p>
+      <ul>
+        <li><strong>You are responsible for your device.</strong> Anyone who can unlock your phone can open Circuit and see what you logged. Use a passcode or biometric lock.</li>
+        <li><strong>You are responsible for backups.</strong> If you enable iCloud or Google device backup, your backup may include Circuit’s local data under your own account. We cannot access, restore, or delete that backup for you.</li>
+        <li><strong>Deletion is final.</strong> If you delete entries or uninstall Circuit, we hold no server copy and cannot recover the data.</li>
+        <li><strong>Accuracy is yours.</strong> Streak dates, daily costs, and daily minutes are the numbers you set. Counts and projections are only as accurate as those inputs.</li>
+      </ul>
+    </section>
+
+    <section id="acceptable-use">
+      <div class="num">06 — Acceptable use</div>
+      <h2 class="sec">Use Circuit lawfully and as designed</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use Circuit for any unlawful purpose, or to facilitate gambling, trading, substance use, or any other activity the streaks in the app are meant to help you track and change</li>
+        <li>Interfere with the app’s operation, bypass its purchase or access controls, or probe it for vulnerabilities except as the law expressly permits</li>
+        <li>Impersonate another person, or enter another person’s private information into the app or a support message</li>
+        <li>Use Circuit in a way that infringes someone else’s rights, or resell or commercially redistribute the app or its content</li>
+      </ul>
+      <p>Circuit has no accounts to suspend, because it requires no account. A breach of this section still ends your license under Section 11.</p>
+    </section>
+
+    <section id="projections">
+      <div class="num">07 — Projections</div>
+      <h2 class="sec">Estimates, not financial advice</h2>
+      <p>The “Saved so far,” Week, Month, Year, and Lifetime figures in Circuit are simple arithmetic, not a financial product: your daily cost or daily minutes, multiplied over time. The Lifetime figure projects to age 80 using the date of birth you enter, and — as the app states — it assumes you stay clean and your daily cost stays the same.</p>
+      <ul>
+        <li>The line is straight, not compounded. It is not an investment return, a savings account, or a forecast of your finances.</li>
+        <li>Actual money and time saved will differ. Costs change, lapses happen, and no projection in Circuit is a guarantee or a promise.</li>
+        <li>Nothing in Circuit is financial, investment, tax, or gambling advice, and nothing in it is a recommendation to place, avoid, or size any bet or trade.</li>
+      </ul>
+    </section>
+
+    <section id="purchases">
+      <div class="num">08 — Purchases &amp; subscriptions</div>
+      <h2 class="sec">If Circuit offers paid features</h2>
+      <p>Circuit is free to download. If paid features or subscriptions are offered in a version you use, the following applies to that purchase:</p>
+      <ul>
+        <li><strong>The store is the seller of record for the transaction.</strong> Apple (for the App Store) or Google (for Google Play) processes payment, taxes where applicable, renewals, cancellations, and refunds under its own terms and policies. Circuit never receives or stores your full card number.</li>
+        <li><strong>Price and terms are shown before you buy.</strong> The price, billing period, what the purchase includes, and — for a subscription — that it renews automatically until cancelled, and how to cancel, are shown on the store’s purchase screen. Read that screen: it controls if it differs from this summary.</li>
+        <li><strong>Manage or cancel in the store.</strong> Subscriptions are managed and cancelled in your App Store or Google Play account settings, not inside Circuit. Deleting the app does not cancel a subscription. Refund requests go to the store, under the store’s refund policy.</li>
+        <li><strong>Free trials,</strong> if offered, convert to a paid subscription at the price shown unless cancelled before the trial ends, as stated on the purchase screen.</li>
+        <li><strong>Restoring purchases</strong> follows the store’s rules for the same store account. Because Circuit has no account of its own, a purchase cannot be moved between an Apple account and a Google account.</li>
+      </ul>
+      <p><strong>Apple App Store — additional terms:</strong> If you obtained Circuit from Apple, you acknowledge that (a) this agreement is between you and the publisher only, not Apple; (b) Apple has no obligation to provide maintenance or support for Circuit; (c) if Circuit fails to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price, if any, and, to the maximum extent permitted by law, Apple has no other warranty obligation for the app; (d) the publisher, not Apple, is responsible for addressing claims about the app, including product-liability, legal-compliance, and consumer-protection claims; (e) the publisher, not Apple, is responsible for investigating and defending any third-party claim that the app infringes intellectual-property rights; and (f) Apple and its subsidiaries are third-party beneficiaries of these terms for the iOS app and may enforce them against you.</p>
+    </section>
+
+    <section id="third-parties">
+      <div class="num">09 — Third-party resources &amp; links</div>
+      <h2 class="sec">Listings are information, not endorsement</h2>
+      <p>Circuit includes resources such as the 988 Suicide and Crisis Lifeline, and listings for therapy, psychiatry, and clinics, founder notes, and links that open outside the app. Those services are provided by third parties we do not control. A listing is not an endorsement, a referral, or a guarantee of quality, availability, price, or outcome, and we are not responsible for a third party’s content, advice, or services.</p>
+      <p>When you tap a link or a call button, you leave Circuit. Circuit does not send your streak or journal data with you, and the third party’s own terms and privacy policy apply to that interaction.</p>
+    </section>
+
+    <section id="disclaimers">
+      <div class="num">10 — Disclaimers &amp; liability</div>
+      <h2 class="sec">Provided “as is,” within the law</h2>
+      <p>Circuit is provided “as is” and “as available,” without warranties of any kind, express or implied, to the maximum extent permitted by law — including any implied warranty of merchantability, fitness for a particular purpose, or that the app will be uninterrupted, error-free, or produce any particular health, habit, or financial result. No streak count, XP, trophy, tool, or article in Circuit guarantees that you will stop a habit or stay stopped.</p>
+      <p>To the maximum extent permitted by law, the publisher will not be liable for any indirect, incidental, special, consequential, or punitive damages, or for lost profits, lost savings, or lost data, arising from your use of or inability to use Circuit — including any decision you make in reliance on a count, projection, tool, or resource in the app. Where liability cannot be excluded, it is limited to the greater of the amount you paid for Circuit in the 12 months before the claim or USD $50.</p>
+      <p>Nothing in these terms excludes or limits liability that cannot be excluded or limited under applicable law, and nothing in these terms affects your statutory consumer rights. If you are a consumer in a jurisdiction that gives you additional rights, those rights still apply.</p>
+    </section>
+
+    <section id="termination">
+      <div class="num">11 — Termination &amp; changes</div>
+      <h2 class="sec">You can stop any time; terms can be updated</h2>
+      <p><strong>By you:</strong> You may stop using Circuit at any time by uninstalling it. Uninstalling ends your license and, as described in the Privacy Policy, removes the app’s locally stored data from that device. It does not cancel a store subscription — cancel that in the store.</p>
+      <p><strong>By us:</strong> We may discontinue Circuit, or end your license if you materially breach these terms. Sections that by their nature should survive — including Sections 4, 7, 10, and 12 — survive the end of your license.</p>
+      <p><strong>Changes to the app and these terms:</strong> We may update Circuit and these terms. We will update this page and its effective date before launching any change that materially affects your rights or how data is handled, and material changes will also be noted in the app’s release notes. If you continue to use Circuit after an update takes effect, the revised terms apply to that use. If you do not agree to a revision, stop using and uninstall the app.</p>
+    </section>
+
+    <section id="law">
+      <div class="num">12 — Governing law &amp; contact</div>
+      <h2 class="sec">New York law; how to reach us</h2>
+      <p>These terms are governed by the laws of the State of New York, United States, without regard to its conflict-of-laws rules, except where applicable consumer law in your place of residence requires otherwise. Any dispute that is not resolved informally will be brought in the state or federal courts located in New York, unless applicable law gives you the right to bring it elsewhere.</p>
+      <p>If any part of these terms is found unenforceable, that part will be limited to the minimum extent necessary and the rest remains in effect. A failure to enforce a provision is not a waiver of it. These terms and the Privacy Policy are the entire agreement between you and the publisher about Circuit and replace any earlier understanding about the app.</p>
+      <p><strong>Publisher:</strong> Circuit is developed and published by Daniel Caruso.</p>
+      <p><strong>Questions about these terms:</strong> Reach the publisher through the Support link on Circuit’s App Store or Google Play listing. That listing is maintained by the publisher, and questions sent there will be answered by the publisher. No separate public support email is published for Circuit at this time — please do not send medical records or passwords in a support message.</p>
+      <p class="small">These terms describe Circuit as it works today: a local-only app with no user accounts. They are the agreement for using the app, written in plain language on purpose.</p>
+    </section>
+  </div>
+
+  <footer>
+    <strong>Circuit</strong> — Terms of Use &bull; Effective November 19, 2026<br>
+    Circuit is a local-only streak and habit tracker. It is not medical treatment or financial advice. If you got here from the App Store or Google Play, these are the official terms for the Circuit app. See also the <a href="https://dcaruso19.github.io/circuit-privacy/">Privacy Policy</a>.
+  </footer>
+
+</div>
+</body>
+</html>
