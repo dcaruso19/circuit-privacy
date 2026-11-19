@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Circuit Privacy Policy</title>
+<style>
+  :root{
+    --bg:#F6F0E6;
+    --bg-card:#FFFCF5;
+    --bg-soft:#F1E8D8;
+    --bg-teal:#247A6E;
+    --bg-teal-dark:#1E655B;
+    --text:#2B2118;
+    --muted:#6B5D4F;
+    --line:#DCCBB2;
+    --line-soft:#E9DDC9;
+    --gold:#B9975B;
+    --gold-soft:#F3EAD3;
+    --radius:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#171412;
+      --bg-card:#221E1A;
+      --bg-soft:#2A2520;
+      --text:#F0E8DC;
+      --muted:#B8A99A;
+      --line:#3D352D;
+      --line-soft:#332C26;
+      --gold-soft:#2E2A22;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--bg-teal)}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2rem}
+  .wrap{max-width:780px;margin:0 auto;padding:24px 18px 56px}
+  /* Header */
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bg-teal);
+    display:flex;align-items:center;gap:10px;margin:8px 0 14px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block}
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;font-weight:700;
+  }
+  h1 span{color:var(--bg-teal)}
+  .lede{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:620px}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;
+  }
+  .pill{
+    font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--bg-card);
+    padding:7px 11px;border-radius:999px;
+  }
+  .pill strong{color:var(--text)}
+  .pill span{color:var(--muted);font-weight:500}
+
+  /* Answer box */
+  .answer{
+    background:var(--bg-teal);color:#fff;border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;
+  }
+  .answer h2{font-family:Georgia,serif;font-size:22px;margin:0 0 8px;line-height:1.25;color:#fff}
+  .answer p{margin:0 0 10px;color:#DFF2EE;font-size:15.5px;line-height:1.6}
+  .answer p:last-child{margin-bottom:0}
+  .answer strong{color:#fff}
+
+  /* Summary grid */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 8px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr} h1{font-size:36px}}
+  .mini{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;
+  }
+  .mini b{display:block;font-size:15px;margin-bottom:4px}
+  .mini p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+  .mini .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:8px}
+
+  /* TOC */
+  .toc{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:20px 0 8px;
+  }
+  .toc h3{margin:0 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+  @media(max-width:560px){.toc ol{columns:1}}
+  .toc li{margin:6px 0;break-inside:avoid}
+  .toc a{color:var(--text);text-decoration:none;font-size:15px;font-weight:500;display:inline-block;padding:4px 0;min-height:32px}
+  .toc a:hover{text-decoration:underline}
+
+  /* Policy */
+  .policy{margin-top:10px}
+  section{
+    padding:26px 0 6px;border-bottom:1px solid var(--line-soft);
+  }
+  section:last-of-type{border-bottom:none}
+  .num{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:6px}
+  h2.sec{
+    font-family:Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em;
+  }
+  section p{margin:0 0 12px;font-size:16px;color:#3A2E22}
+  @media(prefers-color-scheme:dark){section p{color:#E6DDD0}}
+  section ul{margin:8px 0 14px;padding-left:20px}
+  section li{margin:6px 0;font-size:15.5px;line-height:1.6}
+  .callout{
+    background:var(--gold-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0;
+    font-size:15px;line-height:1.6;
+  }
+  .callout strong{display:block;margin-bottom:4px}
+  .table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14.5px}
+  .table th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 10px;border-bottom:1px solid var(--line)}
+  .table td{padding:11px 10px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.5}
+  .table tr:last-child td{border-bottom:none}
+  @media(max-width:600px){
+    .table thead{display:none}
+    .table tr{display:block;padding:10px 0;border-bottom:1px solid var(--line-soft)}
+    .table td{display:block;border:none;padding:3px 0}
+    .table td:first-child{font-weight:700}
+  }
+
+  /* Store checklist */
+  .store{
+    margin-top:28px;background:var(--bg-card);border:1.5px solid var(--text);border-radius:var(--radius);padding:20px;
+  }
+  .store h2{font-family:Georgia,serif;font-size:24px;margin:0 0 8px}
+  .store p{color:var(--muted);font-size:15px;margin:0 0 14px;line-height:1.6}
+  .store ol{margin:0;padding-left:20px}
+  .store li{margin:10px 0;font-size:15.5px;line-height:1.6;padding-left:4px}
+  .store code{background:var(--bg-soft);padding:2px 6px;border-radius:6px;font-size:13.5px;word-break:break-all}
+  .checklist{list-style:none;padding:0;margin:14px 0 0}
+  .checklist li{
+    display:flex;gap:10px;align-items:flex-start;background:var(--bg-soft);border-radius:12px;padding:12px 13px;margin:8px 0;font-size:15px;
+  }
+  .checklist li::before{content:"☐";font-size:18px;line-height:1.3;flex-shrink:0}
+
+  footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.6}
+  footer strong{color:var(--text)}
+  .small{font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Circuit &bull; Privacy Policy</div>
+  <h1>Your data stays<br>on <span>your phone.</span></h1>
+  <p class="lede">Circuit is built to help you track streaks, urges, and progress — without an account and without sending your journal to a Circuit server. Circuit does not sell or share what you log. The only way your data can leave your phone is a device backup you enable through Apple or Google, described in Section 6.</p>
+
+  <div class="meta">
+    <div class="pill"><strong>Effective</strong> <span>November 19, 2026</span></div>
+    <div class="pill"><strong>App</strong> <span>Circuit for iOS &amp; Android</span></div>
+    <div class="pill"><strong>Publisher</strong> <span>Daniel Caruso</span></div>
+    <div class="pill"><strong>Version</strong> <span>Applies to v1.1 and later</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="mini"><div class="k">Storage</div><b>Stored on your device</b><p>Streaks, check-ins, lapses, triggers, ratings, and your date of birth are stored locally and not sent to Circuit. They may be in your own iCloud / Google device backup if you enable it.</p></div>
+    <div class="mini"><div class="k">Account</div><b>No account required</b><p>No sign-up, no email, no password. Opening Circuit does not create an account on a server.</p></div>
+    <div class="mini"><div class="k">Tracking</div><b>No ads, no sale of data</b><p>Circuit does not sell personal data, show third-party ads, or use your logs to build an advertising profile.</p></div>
+    <div class="mini"><div class="k">Control</div><b>Delete by deleting the data</b><p>Remove entries in the app, or uninstall Circuit to remove its locally stored data from that device.</p></div>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <h3>On this page</h3>
+    <ol>
+      <li><a href="#what">What Circuit stores</a></li>
+      <li><a href="#not-collect">What Circuit does not collect</a></li>
+      <li><a href="#use">How your data is used</a></li>
+      <li><a href="#sharing">Sharing &amp; third parties</a></li>
+      <li><a href="#notifications">Notifications</a></li>
+      <li><a href="#security">Storage, backups &amp; security</a></li>
+      <li><a href="#choices">Your choices &amp; deletion</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#health">Not medical advice</a></li>
+      <li><a href="#changes">Changes &amp; contact</a></li>
+    </ol>
+  </nav>
+
+  <div class="policy">
+
+    <section id="what">
+      <div class="num">01 — What Circuit stores</div>
+      <h2 class="sec">Stored locally — not sent to Circuit</h2>
+      <p>Circuit does not operate a server that receives your streak or journal data. The information you enter is saved in the app’s local storage on your phone so the app can work offline and show your history, trophies, and projections. It is not sent to Circuit. It can be included in a device backup only if you enable iCloud or Google backup — see Section 6.</p>
+      <table class="table">
+        <thead><tr><th style="width:32%">What you enter</th><th>Why it’s stored</th><th>Sent to Circuit?</th></tr></thead>
+        <tbody>
+          <tr><td>Streaks &amp; habits</td><td>Names, start dates, daily cost and daily minutes/time you set for money &amp; time saved</td><td>No</td></tr>
+          <tr><td>Check-ins, lapses &amp; urges</td><td>Daily check-ins, wave / urge reports, lapse debriefs, and XP / trophies earned</td><td>No</td></tr>
+          <tr><td>Triggers &amp; patterns</td><td>Triggers you log with an urge or lapse, shown back to you in History / Patterns</td><td>No</td></tr>
+          <tr><td>Life-area ratings</td><td>Ratings you save on Home, shown in Trends on Progress</td><td>No</td></tr>
+          <tr><td>Date of birth</td><td>Only to calculate your age for the Lifetime savings projection (to age 80). As the app says in Settings: “It stays on this device.”</td><td>No</td></tr>
+          <tr><td>Preferences</td><td>Notification settings, display choices, and other in-app settings</td><td>No</td></tr>
+        </tbody>
+      </table>
+      <div class="callout"><strong>Sensitive by nature, private by design</strong> A streak name like “No Drugs” or a trigger note can reveal a lot about you. That is exactly why Circuit keeps it local — there is no Circuit cloud account to breach, subpoena, or sell.</div>
+    </section>
+
+    <section id="not-collect">
+      <div class="num">02 — What we don’t collect</div>
+      <h2 class="sec">No account, no location, no contacts</h2>
+      <p>Circuit does not collect or request:</p>
+      <ul>
+        <li>Your name, email address, or phone number to use the app</li>
+        <li>Precise or approximate location</li>
+        <li>Contacts, photos, microphone, or camera access</li>
+        <li>Health records from Apple Health, Health Connect, or your medical providers</li>
+        <li>Financial account credentials — the money-saved figures are estimates from numbers <em>you</em> type in</li>
+        <li>Advertising identifiers for cross-app tracking</li>
+      </ul>
+      <p>If a future feature ever needs one of these, this policy will be updated and the app will ask for permission before it is collected.</p>
+    </section>
+
+    <section id="use">
+      <div class="num">03 — How your data is used</div>
+      <h2 class="sec">Only to run the features you see</h2>
+      <p>Your locally stored data is used only on your device to:</p>
+      <ul>
+        <li>Count clean days, streaks, and check-in history</li>
+        <li>Calculate “Saved so far” and projections for Week, Month, Year, and Lifetime — assuming your daily cost stays the same</li>
+        <li>Award XP, unlock trophies, and show trends and patterns</li>
+        <li>Show resources and reminders you have chosen</li>
+      </ul>
+      <p>It is not used for advertising, profiling, research, or training models, and it is not sold to anyone.</p>
+    </section>
+
+    <section id="sharing">
+      <div class="num">04 — Sharing &amp; third parties</div>
+      <h2 class="sec">We don’t share what we don’t have</h2>
+      <p>Because your logs are not sent to us, we cannot share, rent, or sell them. There are three limited exceptions that involve the platform, not your journal content:</p>
+      <ul>
+        <li><strong>Apple &amp; Google:</strong> They distribute the app and, if you buy a paid feature in the future, process the payment. They receive the payment information they need — Circuit never sees your full card number. Their privacy policies govern that purchase data.</li>
+        <li><strong>Links you tap:</strong> If you tap a resource — for example, calling 988 or opening a clinic or therapy listing — you leave Circuit and that service’s policy applies. Circuit does not send your streak data with you.</li>
+        <li><strong>Support you initiate:</strong> If you contact support through the App Store / Play Store listing or by email, we will see what you choose to send in that message. Don’t send passwords or medical records.</li>
+      </ul>
+    </section>
+
+    <section id="notifications">
+      <div class="num">05 — Notifications</div>
+      <h2 class="sec">Local reminders, controlled by you</h2>
+      <p>Circuit’s reminders are local notifications scheduled on your device. They are not marketing pushes sent from a server with your journal attached. You can turn them off at any time in Circuit’s settings or in your phone’s system settings, and turning them off does not delete your data.</p>
+    </section>
+
+    <section id="security">
+      <div class="num">06 — Storage, backups &amp; security</div>
+      <h2 class="sec">Protected by your device lock</h2>
+      <p>Your data inherits the protection of your phone — your passcode, Face ID / fingerprint, and device encryption. Keep your device locked and your operating system up to date.</p>
+      <p><strong>Device backups:</strong> If you use iCloud Backup or Google backup, your device backup may include Circuit’s local data, just like other apps. That backup is stored by Apple or Google under your account and your backup settings — you can exclude apps or turn backup off in system settings. Circuit does not receive a copy.</p>
+      <p>No method of storage is 100% secure. If you share an unlocked device with someone else, they can open the app and see what you have logged.</p>
+    </section>
+
+    <section id="choices">
+      <div class="num">07 — Your choices &amp; deletion</div>
+      <h2 class="sec">You don’t need to ask us to delete it</h2>
+      <ul>
+        <li><strong>Edit or remove entries</strong> inside the app where that control is offered (for example, trigger logs in History).</li>
+        <li><strong>Change your date of birth</strong> in Settings — it only changes the Lifetime projection.</li>
+        <li><strong>Delete everything on that device</strong> by deleting the app’s data in system settings or uninstalling Circuit. Uninstalling removes the locally stored copy on that phone.</li>
+        <li><strong>Backups:</strong> To remove Circuit data from an existing device backup, delete or refresh that backup in iCloud / Google settings.</li>
+      </ul>
+      <p>Because we hold no server copy, we cannot recover data you delete and we cannot delete a copy from a phone we don’t have access to — deletion is in your hands, immediately.</p>
+    </section>
+
+    <section id="children">
+      <div class="num">08 — Children</div>
+      <h2 class="sec">Not directed to children under 13</h2>
+      <p>Circuit is intended for adults managing their own habits. It is not directed to children under 13 (or the minimum age in your country), and it does not knowingly collect data from them. Since data is local, a parent or guardian who finds the app on a child’s device can delete it by uninstalling the app.</p>
+    </section>
+
+    <section id="health">
+      <div class="num">09 — Health disclaimer</div>
+      <h2 class="sec">Support, not treatment</h2>
+      <p>Circuit provides self-tracking, education, and encouragement. It is not medical advice, diagnosis, or treatment, and it is not a substitute for professional care. Resources listed in the app are for information only.</p>
+      <p>If you are in crisis or may harm yourself, call or text <strong>988</strong> in the United States (Suicide and Crisis Lifeline) or contact your local emergency services. Talk to your own clinician about treatment decisions, medication, and dosing — Circuit does not provide doses or claim that any technique works for you.</p>
+      <p>Circuit is not a healthcare provider and is not a “covered entity” under HIPAA. The privacy protection here comes from this policy and from keeping data on your device, not from HIPAA.</p>
+    </section>
+
+    <section id="changes">
+      <div class="num">10 — Changes &amp; contact</div>
+      <h2 class="sec">If the app changes, this page changes first</h2>
+      <p>We will update this page and its effective date before launching any feature that changes what is collected or shared — for example, optional accounts, cloud sync, analytics, or subscriptions. Material changes will also be noted in the app’s release notes. Continuing to use Circuit after an update means the revised policy applies to the new version.</p>
+      <p><strong>Publisher:</strong> Circuit is developed and published by Daniel Caruso.</p>
+      <p><strong>Questions:</strong> Reach the publisher through the Support link on Circuit’s App Store or Google Play listing. That listing is maintained by the publisher, and privacy questions sent there will be answered by the publisher. No separate public privacy email is published for Circuit at this time — please do not send medical records or passwords in a support message.</p>
+      <p class="small">This policy describes Circuit as it works today: a local-only app with no user accounts and no server receiving your logs. It is general information for users and store review, not legal advice.</p>
+    </section>
+  </div>
+
+  <footer>
+    <strong>Circuit</strong> — Privacy Policy &bull; Effective November 19, 2026<br>
+    Circuit keeps streak, check-in, and projection data on your device. No account is required to use the app. If you got here from the App Store or Google Play, this is the official policy for the Circuit app.
+  </footer>
+
+</div>
+</body>
+</html>
