@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Circuit Support</title>
+<style>
+  :root{
+    --bg:#F6F0E6;
+    --bg-card:#FFFCF5;
+    --bg-soft:#F1E8D8;
+    --bg-teal:#247A6E;
+    --bg-teal-dark:#1E655B;
+    --text:#2B2118;
+    --muted:#6B5D4F;
+    --line:#DCCBB2;
+    --line-soft:#E9DDC9;
+    --gold:#B9975B;
+    --gold-soft:#F3EAD3;
+    --radius:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#171412;
+      --bg-card:#221E1A;
+      --bg-soft:#2A2520;
+      --text:#F0E8DC;
+      --muted:#B8A99A;
+      --line:#3D352D;
+      --line-soft:#332C26;
+      --gold-soft:#2E2A22;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--bg-teal)}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2rem}
+  .wrap{max-width:780px;margin:0 auto;padding:24px 18px 56px}
+  .eyebrow{
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bg-teal);
+    display:flex;align-items:center;gap:10px;margin:8px 0 14px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);display:inline-block}
+  h1{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:42px;line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;font-weight:700;
+  }
+  h1 span{color:var(--bg-teal)}
+  .lede{font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 18px;max-width:640px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+  .pill{
+    font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--bg-card);
+    padding:7px 11px;border-radius:999px;
+  }
+  .pill strong{color:var(--text)}
+  .pill span{color:var(--muted);font-weight:500}
+  .answer{
+    background:var(--bg-teal);color:#fff;border-radius:var(--radius);padding:20px 20px 18px;margin:22px 0;
+  }
+  .answer h2{font-family:Georgia,serif;font-size:22px;margin:0 0 8px;line-height:1.25;color:#fff}
+  .answer p{margin:0 0 10px;color:#DFF2EE;font-size:15.5px;line-height:1.6}
+  .answer p:last-child{margin-bottom:0}
+  .answer strong{color:#fff}
+  .answer ul{margin:6px 0 4px;padding-left:20px;color:#DFF2EE;font-size:15.5px;line-height:1.6}
+  .answer li{margin:5px 0}
+  .answer a{color:#fff}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 8px}
+  @media(max-width:560px){.grid{grid-template-columns:1fr} h1{font-size:36px}}
+  .mini{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;
+  }
+  .mini b{display:block;font-size:15px;margin-bottom:4px}
+  .mini p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.55}
+  .mini .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:8px}
+  .toc{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:20px 0 8px;
+  }
+  .toc h3{margin:0 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+  @media(max-width:560px){.toc ol{columns:1}}
+  .toc li{margin:6px 0;break-inside:avoid}
+  .toc a{color:var(--text);text-decoration:none;font-size:15px;font-weight:500;display:inline-block;padding:4px 0;min-height:32px}
+  .toc a:hover{text-decoration:underline}
+  .policy{margin-top:10px}
+  section{padding:26px 0 6px;border-bottom:1px solid var(--line-soft)}
+  section:last-of-type{border-bottom:none}
+  .num{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg-teal);font-weight:800;margin-bottom:6px}
+  h2.sec{font-family:Georgia,serif;font-size:26px;line-height:1.2;margin:0 0 12px;letter-spacing:-.01em}
+  section p{margin:0 0 12px;font-size:16px;color:#3A2E22}
+  @media(prefers-color-scheme:dark){section p{color:#E6DDD0}}
+  section ul,section ol{margin:8px 0 14px;padding-left:20px}
+  section li{margin:6px 0;font-size:15.5px;line-height:1.6}
+  .callout{
+    background:var(--gold-soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:14px 0;
+    font-size:15px;line-height:1.6;
+  }
+  .callout strong{display:block;margin-bottom:4px}
+  /* FAQ accordions */
+  .faq{margin:4px 0 14px;display:grid;gap:10px}
+  .faq details{
+    background:var(--bg-card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  }
+  .faq summary{
+    cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 16px;min-height:48px;font-size:15.5px;font-weight:700;line-height:1.4;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"+";flex-shrink:0;width:28px;height:28px;border-radius:999px;background:var(--bg-soft);
+    color:var(--bg-teal);display:grid;place-items:center;font-size:19px;font-weight:700;line-height:1;
+  }
+  .faq details[open ] summary::after{content:"–"}
+  .faq details[open ] summary{border-bottom:1px solid var(--line-soft)}
+  .faq .body{padding:13px 16px 15px}
+  .faq .body p{font-size:15.5px;margin:0 0 10px}
+  .faq .body p:last-child{margin-bottom:0}
+  .faq .body ul,.faq .body ol{margin:6px 0 10px}
+  .faq .body li{font-size:15.5px}
+  .steps{counter-reset:step;list-style:none;padding:0;margin:10px 0 14px;display:grid;gap:8px}
+  .steps li{
+    display:flex;gap:12px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;margin:0;font-size:15.5px;
+  }
+  .steps li::before{
+    counter-increment:step;content:counter(step);flex-shrink:0;width:26px;height:26px;border-radius:999px;
+    background:var(--bg-teal);color:#fff;display:grid;place-items:center;font-size:13.5px;font-weight:800;line-height:1;margin-top:1px;
+  }
+  footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.6}
+  footer strong{color:var(--text)}
+  .small{font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Circuit &bull; Support</div>
+  <h1>Support for<br><span>Circuit.</span></h1>
+  <p class="lede">Answers to the questions Circuit users actually ask — streaks, the savings chart, notifications, deleting your data, and purchases. Circuit has no account and no server, so most fixes happen right on your phone, in the app or in your phone&rsquo;s settings.</p>
+
+  <div class="meta">
+    <div class="pill"><strong>Updated</strong> <span>November 19, 2026</span></div>
+    <div class="pill"><strong>App</strong> <span>Circuit for iOS &amp; Android</span></div>
+    <div class="pill"><strong>Publisher</strong> <span>Daniel Caruso</span></div>
+    <div class="pill"><strong>Version</strong> <span>Applies to v1.1 and later</span></div>
+  </div>
+
+  <div class="answer">
+    <h2>Start here</h2>
+    <ul>
+      <li><strong>There is no password to reset.</strong> Circuit needs no sign-up, no email, and no account — opening the app is all it takes.</li>
+      <li><strong>Your data lives only on your device.</strong> We hold no copy, so we cannot look up, restore, or delete your streaks for you. The steps below do it directly on your phone.</li>
+      <li><strong>Payments and refunds go through the store.</strong> Apple and Google process purchases, renewals, and refunds — see <a href="#purchases" style="text-decoration:underline">Purchases &amp; refunds</a>.</li>
+      <li><strong>If you are in crisis, do not wait on an app.</strong> Call or text <strong>988</strong> in the United States or contact your local emergency services.</li>
+    </ul>
+  </div>
+
+  <div class="grid">
+    <div class="mini"><div class="k">Streaks</div><b>Counted from the exact start</b><p>Each streak runs in true 24-hour periods from the start date <em>and</em> start time you set — not from midnight.</p></div>
+    <div class="mini"><div class="k">Your data</div><b>Delete it yourself, instantly</b><p>Edit entries in the app, or uninstall Circuit to remove its locally stored data from that device. No request needed.</p></div>
+    <div class="mini"><div class="k">Purchases</div><b>Managed in the store</b><p>Subscriptions, cancellations, restores, and refunds are handled in your App Store or Google Play account.</p></div>
+    <div class="mini"><div class="k">Reminders</div><b>Local notifications</b><p>Reminders are scheduled on your device. You control them in Circuit&rsquo;s settings and your phone&rsquo;s settings.</p></div>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <h3>On this page</h3>
+    <ol>
+      <li><a href="#streaks">Streaks &amp; start times</a></li>
+      <li><a href="#chart">The savings chart</a></li>
+      <li><a href="#waves">Waves, lapses &amp; check-ins</a></li>
+      <li><a href="#notifications">Notifications</a></li>
+      <li><a href="#projections">Money &amp; time saved</a></li>
+      <li><a href="#data">Your data &amp; deletion</a></li>
+      <li><a href="#purchases">Purchases &amp; refunds</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+      <li><a href="#crisis">Crisis &amp; professional help</a></li>
+      <li><a href="#more">Privacy, terms &amp; feedback</a></li>
+    </ol>
+  </nav>
+
+  <div class="policy">
+
+    <section id="streaks">
+      <div class="num">01 — Streaks &amp; start times</div>
+      <h2 class="sec">How streak counting works</h2>
+      <p>A streak day is a full 24 hours from the moment the streak started. A streak started today at 6:00&nbsp;pm completes its first day tomorrow at 6:00&nbsp;pm — the ring fills gradually until then, and the counter reads 0 days in between. That is the counter working correctly, not a bug.</p>
+      <div class="faq">
+        <details>
+          <summary>How do I start a new streak?</summary>
+          <div class="body">
+            <p>Add a streak from the app&rsquo;s add-streak flow and set:</p>
+            <ul>
+              <li>The habit name</li>
+              <li>The <strong>start date and start time</strong> — if the streak starts today, the time defaults to right now; if it started in the past, set the time it actually began</li>
+              <li>The daily cost and daily time the habit used, which power the money and time saved figures</li>
+            </ul>
+            <p>The same start date and time fields are used when streaks are created during onboarding.</p>
+          </div>
+        </details>
+        <details>
+          <summary>My streak shows 0 days but I started hours ago — is it broken?</summary>
+          <div class="body">
+            <p>No. Days count complete 24-hour periods from your start time. A streak started an hour ago shows 0 days with a partly filled ring, and the first day lands exactly 24 hours after the start time you set.</p>
+          </div>
+        </details>
+        <details>
+          <summary>The start time on my streak is wrong. Can I fix it?</summary>
+          <div class="body">
+            <p>Yes — open the streak&rsquo;s edit screen and correct the start date and start time there. Counts, the ring, and projections update from the corrected timestamp. Streaks created before start times were added keep counting exactly as they did, from the date stored on them.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What happens to my count after a lapse?</summary>
+          <div class="body">
+            <p>Recording a lapse closes the current cycle and starts a new one from the exact moment of the lapse, so the new cycle also runs on true 24-hour periods. Your history, lapse debrief, and triggers stay recorded — a lapse resets the current streak count, not your record.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="chart">
+      <div class="num">02 — The savings chart</div>
+      <h2 class="sec">Reading money and time saved</h2>
+      <p>The chart on Progress draws one line per streak. The solid part is what you have saved so far; the dashed part is the projection if you stay clean, at the daily rate you set for each streak.</p>
+      <div class="faq">
+        <details>
+          <summary>How do I see the value on a specific day?</summary>
+          <div class="body">
+            <p>Drag your finger across the chart. A guide line follows it, with a dot on each streak that has started by that day, and a small label on the chart itself shows the date — or, on the Lifetime range, the age — and the total across all streaks for that day. While you scrub, the legend below the chart shows each streak&rsquo;s value at that day instead of saved so far. The position stays when you lift your finger; changing the range or the Money / Time toggle clears it.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What do the ranges and the Money / Time toggle do?</summary>
+          <div class="body">
+            <ul>
+              <li><strong>30 days and 1 year</strong> label points by calendar date.</li>
+              <li><strong>Lifetime</strong> projects to age 80 using the date of birth in Settings, and labels points by whole age.</li>
+              <li><strong>Money / Time</strong> switches every figure between dollars saved and hours saved, using the daily cost and daily minutes you set per streak.</li>
+            </ul>
+          </div>
+        </details>
+        <details>
+          <summary>Why is a streak missing from part of the chart?</summary>
+          <div class="body">
+            <p>A streak only appears from its start date onward. Before that day it has saved nothing, so it has no dot, no label value, and no legend value at that point in the scrub.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="waves">
+      <div class="num">03 — Waves, lapses &amp; check-ins</div>
+      <h2 class="sec">The day-to-day tools</h2>
+      <div class="faq">
+        <details>
+          <summary>What is a wave?</summary>
+          <div class="body">
+            <p>A wave is an urge you log and ride out in the app instead of acting on. Logging the triggers connected to it is what builds the patterns Circuit shows you back in History. Completing a wave earns XP.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do check-ins, XP, and trophies work?</summary>
+          <div class="body">
+            <p>Check in daily to record the day. Check-ins, completed waves, and clean-day milestones earn XP and unlock trophies. Life-area ratings you save on Home appear as trends on Progress.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Can I remove a trigger or an entry I logged by mistake?</summary>
+          <div class="body">
+            <p>Yes — entries you can edit or remove, such as trigger logs, are controlled in History inside the app. Deleting an entry is immediate and cannot be undone, because there is no server copy to restore from.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="notifications">
+      <div class="num">04 — Notifications</div>
+      <h2 class="sec">Local reminders, controlled by you</h2>
+      <p>Circuit&rsquo;s reminders are local notifications scheduled on your device — nothing is pushed from a server. If a reminder does not arrive, work through these in order:</p>
+      <ol class="steps">
+        <li>Open Circuit&rsquo;s settings and confirm reminders are on. Use the test notification button there to check delivery.</li>
+        <li>Open your phone&rsquo;s system settings for Circuit and confirm notifications are allowed.</li>
+        <li>Check Focus / Do Not Disturb — a scheduled Focus can hold local notifications back until it ends.</li>
+      </ol>
+      <div class="faq">
+        <details>
+          <summary>How do I turn reminders off?</summary>
+          <div class="body">
+            <p>Turn them off in Circuit&rsquo;s settings, or block them for Circuit in your phone&rsquo;s system settings. Turning reminders off never deletes your streaks or history.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="projections">
+      <div class="num">05 — Money &amp; time saved</div>
+      <h2 class="sec">Estimates from your numbers</h2>
+      <p>Every saved figure is simple arithmetic: the daily cost or daily minutes <em>you</em> set for a streak, multiplied over time. The line is straight — it is not compounded, invested, or a forecast of your finances.</p>
+      <div class="faq">
+        <details>
+          <summary>My saved total looks wrong. Where do I check?</summary>
+          <div class="body">
+            <p>Open the streak and check its start date and start time and its daily cost and daily minutes. The totals are only as accurate as those inputs — correct the input and the totals, including projections, recalculate.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How does the Lifetime figure work?</summary>
+          <div class="body">
+            <p>Lifetime projects your daily rates forward to age 80, using the date of birth stored in Settings. It assumes you stay clean and your daily cost stays the same. You can change your date of birth in Settings at any time — it stays on this device and only changes the projection.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="num">06 — Your data &amp; deletion</div>
+      <h2 class="sec">On your phone, under your control</h2>
+      <p>Circuit stores streaks, check-ins, lapses, triggers, ratings, your date of birth, and your settings locally on your device. No account is created and nothing is sent to a Circuit server. The full detail is in the <a href="https://dcaruso19.github.io/circuit-privacy/">Privacy Policy</a>.</p>
+      <div class="faq">
+        <details>
+          <summary>How do I delete everything?</summary>
+          <div class="body">
+            <ul>
+              <li><strong>On this device:</strong> delete the app&rsquo;s data in system settings, or uninstall Circuit. That removes the locally stored copy on that phone.</li>
+              <li><strong>In a device backup:</strong> if you use iCloud Backup or Google backup, that backup may include Circuit&rsquo;s data under your own account. Delete or refresh the backup in your iCloud / Google settings to remove it there too.</li>
+            </ul>
+            <p>Deletion is final. We hold no server copy, so deleted data cannot be recovered — by you or by us.</p>
+          </div>
+        </details>
+        <details>
+          <summary>I got a new phone. Where did my streaks go?</summary>
+          <div class="body">
+            <p>Circuit has no cloud sync and no account to sign back into. Your data moves only with a device backup you made — restoring your old phone&rsquo;s iCloud or Google backup onto the new phone brings the app&rsquo;s local data with it. Without a backup, there is no copy to restore.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Can someone else see what I logged?</summary>
+          <div class="body">
+            <p>Only someone who can unlock your phone and open the app. Your data inherits your device&rsquo;s protection — passcode, Face ID / fingerprint, and encryption — so keep your device locked.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="purchases">
+      <div class="num">07 — Purchases &amp; refunds</div>
+      <h2 class="sec">Handled by Apple and Google</h2>
+      <p>Circuit is free to download. If paid features or a subscription are offered in the version you use, the store — Apple for the App Store, Google for Google Play — processes the payment, renewals, cancellations, and refunds under its own terms. Circuit never sees your full card number.</p>
+      <div class="faq">
+        <details>
+          <summary>How do I restore a purchase?</summary>
+          <div class="body">
+            <p>Use Restore Purchases in the app while signed into the same App Store or Google Play account you bought with. Because Circuit has no account of its own, a purchase cannot be moved between an Apple account and a Google account.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do I cancel a subscription?</summary>
+          <div class="body">
+            <p>Cancel in your store account settings — on iPhone, Settings &rsaquo; your name &rsaquo; Subscriptions; on Android, Google Play &rsaquo; your profile &rsaquo; Payments &amp; subscriptions &rsaquo; Subscriptions. Deleting the app does <strong>not</strong> cancel a subscription.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do refunds and free trials work?</summary>
+          <div class="body">
+            <p>Refund requests go to Apple or Google under the store&rsquo;s refund policy — the publisher cannot issue store refunds directly. A free trial, if offered, converts to the paid price shown on the purchase screen unless you cancel before the trial ends.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="troubleshooting">
+      <div class="num">08 — Troubleshooting</div>
+      <h2 class="sec">When something looks off</h2>
+      <div class="faq">
+        <details>
+          <summary>The app forgot my data after a reinstall</summary>
+          <div class="body">
+            <p>Uninstalling removes the app&rsquo;s locally stored data from that device, and there is no server copy. The only way back is restoring a device backup (iCloud or Google) made before the uninstall.</p>
+          </div>
+        </details>
+        <details>
+          <summary>A count, ring, or total does not match what I expect</summary>
+          <div class="body">
+            <p>Check the streak&rsquo;s start date <em>and</em> start time, and its daily cost and minutes. Days complete at the start time each day, not at midnight, so a count that looks a few hours &ldquo;behind&rdquo; is usually the 24-hour cycle working as designed.</p>
+          </div>
+        </details>
+        <details>
+          <summary>The app will not open or keeps closing</summary>
+          <div class="body">
+            <p>Restart the phone, then check the App Store or Google Play for a Circuit update and install it. If it still fails, note your phone model, OS version, and what you tapped last — and include those three things if you leave feedback (see below). Do not uninstall as a first step: uninstalling deletes your local data.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="crisis">
+      <div class="num">09 — Crisis &amp; professional help</div>
+      <h2 class="sec">Circuit is support, not treatment</h2>
+      <p>Circuit provides self-tracking, education, and encouragement. It is not medical advice, diagnosis, or treatment, it is not therapy, and it is not a crisis service. Resources listed in the app are information only, not a referral or an endorsement.</p>
+      <div class="callout"><strong>If you are in crisis</strong> If you may harm yourself or someone else, call or text <strong>988</strong> in the United States (Suicide and Crisis Lifeline), call your local emergency number, or go to your nearest emergency department. Talk to your own clinician about treatment decisions, medication, and dosing.</div>
+    </section>
+
+    <section id="more">
+      <div class="num">10 — Privacy, terms &amp; feedback</div>
+      <h2 class="sec">The documents, and how to reach us</h2>
+      <ul>
+        <li><strong>Privacy Policy:</strong> <a href="https://dcaruso19.github.io/circuit-privacy/">dcaruso19.github.io/circuit-privacy</a> — also linked from Settings in the app.</li>
+        <li><strong>Terms of Use:</strong> <a href="https://dcaruso19.github.io/circuit-privacy/terms.html">dcaruso19.github.io/circuit-privacy/terms.html</a> — also linked from Settings in the app, next to the Privacy Policy.</li>
+      </ul>
+      <p><strong>Feedback:</strong> No separate public support email is published for Circuit. The publisher reads App Store and Google Play reviews, so a review that names your phone model, OS version, app version, and the steps that led to the problem is the most useful way to report an issue — and purchase problems are resolved fastest by Apple or Google directly, as described above. Please do not include medical records, passwords, or other private information in a review or message.</p>
+      <p class="small">This page is the support resource for Circuit as it works today: a local-only app with no user accounts and no server receiving your logs.</p>
+    </section>
+  </div>
+
+  <footer>
+    <strong>Circuit</strong> — Support &bull; Updated November 19, 2026<br>
+    Circuit is a local-only streak and habit tracker. It is not medical treatment or financial advice. If you got here from the App Store or Google Play, this is the official support page for the Circuit app. See also the <a href="https://dcaruso19.github.io/circuit-privacy/">Privacy Policy</a>.
+  </footer>
+
+</div>
+</body>
+</html>
